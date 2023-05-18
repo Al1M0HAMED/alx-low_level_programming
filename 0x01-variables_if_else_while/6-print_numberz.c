@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - this is the main function 
+ * main - this is the main function
  *
  * Discription: this function prints all the numbers digits but wiht but
  * wiht putchar function and without char data type.
