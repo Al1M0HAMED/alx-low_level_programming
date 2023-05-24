@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * main - this function tests if the function positive_or_negative works.
  *
@@ -6,7 +7,6 @@
  */
 int main(void)
 {
-	positive_or_negative(0);
-
+	postitive_or_negative(0);
 	return (0);
 }
