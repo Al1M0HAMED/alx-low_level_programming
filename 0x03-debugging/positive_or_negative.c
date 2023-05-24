@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - Generate a random number and determine if it
+ * positive_or_negative - determine if it
  * is positive, negative, or zero
  *
  * This function generates a random number using the
