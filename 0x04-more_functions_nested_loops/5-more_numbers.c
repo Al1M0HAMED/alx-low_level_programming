@@ -12,21 +12,21 @@ void more_numbers(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		for (j = 48; j < 67; j++)
+		for (j = 48; j < 68; j++)
 		{
-			if (j == 58)
+			if (j == 59)
 				n = 48;
-			else if (j == 57 || j == 59 || j == 60 || j == 61 || j == 63 || j == 65)
+			else if (j == 58 || j == 60 || j == 61 || j == 62 || j == 64 || j == 66)
 				n = 49;
-			else if (j == 62)
+			else if (j == 63)
 				n = 50;
-			else if (j == 64)
+			else if (j == 65)
 				n = 51;
-			else if (j == 66)
+			else if (j == 67)
 				n = 52;
 			if (j >= 48 && j < 58)
 				_putchar(j);
-			else if (j >= 57)
+			if (j > 57)
 				_putchar(n);
 		}
 		_putchar('\n');
