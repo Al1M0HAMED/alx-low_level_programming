@@ -24,7 +24,7 @@ void more_numbers(void)
 				n = 51;
 			else if (j == 66)
 				n = 52;
-			else if (j >= 48 && j < 58)
+			if (j >= 48 && j < 58)
 				_putchar(j);
 			else if (j >= 57)
 				_putchar(n);
