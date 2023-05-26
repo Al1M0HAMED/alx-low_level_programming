@@ -10,16 +10,22 @@ void print_triangle(int size)
 {
 	int row, coulmns, spaces;
 
-	for (row = 1; row <= size; row++)
+	if (size <= 0)
 	{
-		for (spaces = 0; spaces < (size - row); spaces++)
-		{
-			_putchar(' ');
-		}
-		for (coulmns = 1; coulmns <= row; ++coulmns)
-		{
-			_putchar('#');
-		}
-		_putchar('\n');
+		putchar('\n');
 	}
+	else
+	{
+		for (row = 1; row <= size; row++)
+		{
+			for (spaces = 0; spaces < (size - row); spaces++)
+			{
+				_putchar(' ');
+			}
+			for (coulmns = 1; coulmns <= row; ++coulmns)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
 }
