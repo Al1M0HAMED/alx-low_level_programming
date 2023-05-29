@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * puts2 - nothing.
+ *
+ * @str: nothing.
+ */
 void puts2(char *str)
 {
 	int i;

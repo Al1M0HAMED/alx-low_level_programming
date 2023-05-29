@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * puts_half - nothing.
+ *
+ * @str: char.
+ */
 void puts_half(char *str)
 {
 	int i, x, n, half_length;

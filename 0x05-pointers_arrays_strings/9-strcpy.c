@@ -1,5 +1,13 @@
 #include "main.h"
-
+/**
+ *  _strcpy - no.
+ *
+ * @dest: no.
+ *
+ * @src: no.
+ *
+ * Return: no.
+ */
 char *_strcpy(char *dest, char *src)
 {
 	int i, j;
@@ -10,7 +18,7 @@ char *_strcpy(char *dest, char *src)
 
 		*(dest + i) = *(src + i);
 		if (*(src + i) == 0)
-			j = i;
+			j = i + 1;
 		i++;
 	}
 	*(dest + j) = *(src + j);
