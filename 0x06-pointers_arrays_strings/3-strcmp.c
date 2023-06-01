@@ -43,7 +43,7 @@ int _strcmp(char *s1, char *s2)
 		}
 		for (n = 0; n < i; n++)
                 {
-                        s += s2[n];
+                        ss += s2[n];
                 }
 		if (s > ss)
 			r = 15;
