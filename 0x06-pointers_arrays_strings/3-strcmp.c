@@ -4,20 +4,20 @@ int _strcmp(char *s1, char *s2)
 {
 	int i, j, n, s, ss, equal, r;
 
-	i = 0, s = 0, ss = 0, equal = 0, r = 0, j = 0;
+	i = 0, s = 0, ss = 0, equal = 0, j = 0;
 	while (s1[i] != '\0')
 	{
 		i++;
 	}
 	j = 0;
-	while (s1[j] != '\0')
+	while (s2[j] != '\0')
         {
                 j++;
         }
 	if (i == j)
 	{
 		n = 0;
-		while (n < i)
+		while (n < (i - 1))
 		{
 			if (s1[n] == s2[n])
 				equal++;
@@ -31,7 +31,7 @@ int _strcmp(char *s1, char *s2)
                         r = 15;
                 else if (ss > s)
                         r = -15;
-		else if (equal == n)
+		else if (equal == (i - 1))
 			r = 0;
 
 	}
