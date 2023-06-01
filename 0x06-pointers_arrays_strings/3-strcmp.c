@@ -1,5 +1,14 @@
 #include "main.h"
-
+/**
+ * _strcmp - this function compare two strings.
+ *
+ * @s1: parameter is string.
+ *
+ * @s2: parameter is string.
+ *
+ * Return: resturns the defferant between first two differant chars in the
+ * two strings.
+ */
 int _strcmp(char *s1, char *s2)
 {
 	int i, s;
@@ -11,5 +20,5 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	i--;
-	return (s1[i] - s2[i]);	
+	return (s1[i] - s2[i]);
 }
