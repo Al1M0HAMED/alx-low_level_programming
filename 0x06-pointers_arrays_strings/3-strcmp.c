@@ -17,7 +17,7 @@ int _strcmp(char *s1, char *s2)
 	if (i == j)
 	{
 		n = 0;
-		while (n < (i - 1))
+		while (n < i)
 		{
 			if (s1[n] == s2[n])
 				equal++;
