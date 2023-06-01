@@ -4,7 +4,7 @@ int _strcmp(char *s1, char *s2)
 {
 	int i, j, s, ss, r;
 
-	i = 0;
+	i = 0, s = 0, ss = 0;
 	while (s1[i] != '\0')
 	{
 		s += s1[i];
@@ -18,13 +18,15 @@ int _strcmp(char *s1, char *s2)
 	}
 	if (i == j)
 		r = (s - ss);
-	else if (i != j && (s - ss) == 0)
-		r = (s);
+	else if (i != j && (ss - s) == 0)
+		r = (ss);
 	else
 		r = (s - ss);
 	if (r > 0)
 		r = 15;
 	else if (r < 0)
 		r = -15;
+	else 
+		r = 0;
 	return (r);
 }
