@@ -18,8 +18,6 @@ int _strcmp(char *s1, char *s2)
 	}
 	if (i == j)
 		r = (s - ss);
-	else if (i != j && (ss - s) == 0)
-		r = (ss);
 	else
 		r = (s - ss);
 	if (r > 0)
