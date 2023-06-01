@@ -31,7 +31,7 @@ int _strcmp(char *s1, char *s2)
                         r = 15;
                 else if (ss > s)
                         r = -15;
-		else if (equal == (n - 1))
+		else if (equal == n)
 			r = 0;
 
 	}
