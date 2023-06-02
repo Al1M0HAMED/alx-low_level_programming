@@ -29,5 +29,5 @@ void reverse_array(int *a, int n)
 		i++;
 	}
 	pi = &n;
-	*pi = *pi - 1;
+	*pi = *pi - 2;
 }
