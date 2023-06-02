@@ -14,7 +14,7 @@ void reverse_array(int *a, int n)
 
 	if (n % 2 != 0)
 	{
-		l = (n - 1);
+		l = (n + 1);
 	}
 	l = l / 2;
 	i = 0, j = (n - 1);
