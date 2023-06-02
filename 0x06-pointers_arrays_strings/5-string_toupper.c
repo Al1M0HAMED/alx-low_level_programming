@@ -13,8 +13,8 @@ char *string_toupper(char *s)
 	i = 0; 
 	while (*(s+ i) != '\0')
 	{
-		if (*(s + i) < 'a' && *(s + i) >= 'A')
-			*(s + i) += ' ';
+		if (s[i] > 90 && s[i] >= 97)
+			s[i] -= ' ';
 		i++;
 	}
 	return (s);
