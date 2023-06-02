@@ -11,6 +11,7 @@
 void reverse_array(int *a, int n)
 {
 	int i, j, l, first_e, last_e;
+	int *pi;
 
 	if (n % 2 != 0)
 	{
@@ -27,5 +28,6 @@ void reverse_array(int *a, int n)
 		j--;
 		i++;
 	}
-	n--;
+	pi = &n;
+	*pi = *pi - 1;
 }
