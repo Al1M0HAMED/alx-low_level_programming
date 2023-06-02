@@ -8,7 +8,7 @@
  *
  * Return: nothing.
  */
-void reverse_array(int *a, int n)
+void reverse_array(int a[], int n)
 {
 	int i, j, l, first_e, last_e;
 	int *pi;
@@ -28,6 +28,4 @@ void reverse_array(int *a, int n)
 		j--;
 		i++;
 	}
-	pi = &n;
-	*pi = *pi - 2;
 }
