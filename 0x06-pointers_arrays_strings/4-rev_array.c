@@ -12,11 +12,7 @@ void reverse_array(int *a, int n)
 {
 	int i, j, l, first_e, last_e;
 
-	if (n % 2 != 0)
-	{
-		l = (n + 1);
-	}
-	l = l / 2;
+	l = (n + 1) / 2;
 	i = 0, j = (n - 1);
 	while (i != l)
 	{
