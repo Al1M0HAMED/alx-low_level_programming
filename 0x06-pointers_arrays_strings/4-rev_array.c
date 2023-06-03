@@ -12,15 +12,17 @@ void reverse_array(int *a, int n)
 {
 	int i, j, l, first_e, last_e;
 
-	l = n / 2;
-	i = 0, j = (n - 1);
-	while (i != l)
+	if (n > 0)
 	{
-		last_e = a[j];
-		first_e = a[i];
-		a[j] = first_e;
-		a[i] = last_e;
-		j--;
-		i++;
-	}
+		l = n / 2;
+		i = 0, j = (n - 1);
+		while (i != l)
+		{
+			last_e = a[j];
+			first_e = a[i];
+			a[j] = first_e;
+			a[i] = last_e;
+			j--;
+			i++;
+		}
 }
