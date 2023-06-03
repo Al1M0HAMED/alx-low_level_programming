@@ -25,5 +25,6 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
-	return (str);
+	if (i > 0)
+		return (str);
 }
