@@ -8,26 +8,21 @@
  */
 char *cap_string(char *str)
 {
-	int i, j;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] == '.') | (str[i] == ';') | (str[i] == ',') | (str[i] == '\n') | 
-				(str[i] == '\t') | (str[i] == ' ') | (str[i] == '?') | (str[i] == '!') | 
-				(str[i] == '\"') | (str[i] == '(') | (str[i] == ')') | (str[i] == '{') | 
-				(str[i] == '}'))
+		if ((str[i] == '.') || (str[i] == ';') || (str[i] == ',') ||
+				(str[i] == '\n') || (str[i] == '\t') || (str[i] == 32) || (str[i] == '?')
+				|| (str[i] == '!') || (str[i] == '"') || (str[i] == '(') ||
+				(str[i] == ')') || (str[i] == '{') || (str[i] == '}'))
+		{
+			if (str[i + 1] >= 97 && str[i + 1] <= 122)
 			{
-				j = 1;
-				while (str[i + j] < 65 && str[i + j] > 90)
-				{
-					if (str[i + j] >= 97 && str[i + j] <= 122)
-					{
-						str[i + j] -= 32;
-					}
-					else j++;
-				}
+				str[i + 1] -= ' ';
 			}
+		}
 		i++;
 	}
 	return (str);
