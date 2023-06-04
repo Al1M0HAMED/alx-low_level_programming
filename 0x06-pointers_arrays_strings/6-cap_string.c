@@ -23,11 +23,11 @@ char *cap_string(char *str)
 				str[i + 1] -= 32;
 			}
 		}
-		if (str[i] == '\t')
-		{
-			str[i] = ' ';
-		}
 		i++;
 	}
+	 if (i < 2 || (str[0] <=122 && str[0] >= 97))
+                {
+                        str[0] -= 32;
+                }
 	return (str);
 }
