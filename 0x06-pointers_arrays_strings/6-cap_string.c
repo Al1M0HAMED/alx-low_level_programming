@@ -25,7 +25,7 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
-	 if (i < 2 || (str[0] <=122 && str[0] >= 97))
+	 if ((i < 2  && str[0] != '\0') || (str[0] <=122 && str[0] >= 97))
                 {
                         str[0] -= 32;
                 }
