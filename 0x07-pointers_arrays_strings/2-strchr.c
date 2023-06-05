@@ -23,7 +23,9 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
-	if (n == 0)
+	if (c == '\0')
+		return (NULL);
+	else if (n == 0)
 		return (s + j);
 	else
 		return (s + i);
