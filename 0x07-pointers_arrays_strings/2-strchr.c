@@ -14,14 +14,20 @@ char *_strchr(char *s, char c)
 	int i, n;
 
 	i = 0, n = 1;
-	while (s[i] != '\0' && n)
+	if (c == '\0')
+		return (NULL);
+	else
 	{
-		if (s[i] == c)
+		while (s[i] != '\0' && n)
 		{
-			n = 0;
+			if (s[i] == c)
+				n = 0;
+			i++;
 		}
-		i++;
+		i--;
 	}
-	i--;
-	return (s + i);
+	if (n == 0)
+		return (s + i);
+	else
+		return (NULL);
 }
