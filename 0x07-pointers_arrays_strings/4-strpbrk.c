@@ -20,7 +20,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 				break;
-			if (accept[j] == '\0')
+			if (s[i] == '\0')
 				break;
 			j++;
 		}
