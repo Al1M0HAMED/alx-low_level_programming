@@ -29,8 +29,10 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (n == 0)
 		return (s + l);
-	if ((accept[0] == '\0' && s[0] != '0') || (s[0] == accept[0]))
+	else if (accept[0] == '\0' && s[0] != '0')
 		return (s + i);
-	else 
+	else if (s[0] == accept[0])
+		return (s);
+	else
 		return (NULL);
 }
