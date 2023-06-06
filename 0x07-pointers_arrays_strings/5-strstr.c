@@ -1,10 +1,13 @@
 #include "main.h"
 /**
+ * _strstr - this function is an implemintation of strstr function.
  *
+ * @haystack: is a char to array.
  *
+ * @needle: is a char to array.
  *
- *
- *
+ * Return: pointer to the beginning of the located substring, or NULL if the
+ * substring is not found.
  */
 char *_strstr(char *haystack, char *needle)
 {
@@ -20,9 +23,12 @@ char *_strstr(char *haystack, char *needle)
 				n++;
 			j++;
 		}
-		if (n == j && j > 0)
+		if (n == j && j != 0 && n != 0)
 			return (haystack + i);
 		i++;
 	}
-	return (NULL);
+	if (needle[0] == '\0')
+		return (haystack);
+	else
+		return (NULL);
 }
