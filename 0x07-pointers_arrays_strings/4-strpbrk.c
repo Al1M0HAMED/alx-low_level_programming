@@ -28,6 +28,8 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (s[0] == '\0' || accept[0] == '\0' || s[i] != accept[j])
 		return (NULL);
-	else
+	else if (s[i] == accept[j])
 		return (s + i);
+	else
+		return (NULL);
 }
