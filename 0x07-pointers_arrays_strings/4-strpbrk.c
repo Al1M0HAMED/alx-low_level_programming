@@ -10,29 +10,24 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j, n, l;
+	int i, j, n;
 
 	i = 0, n = 1;
-	while (s[i] != '\0')
+	while (n)
 	{
 		j = 0;
-		while (accept[j] != '\0' && n == 1)
+		while (n)
 		{
-			if (s[i] == accept[j])
-			{
-				n = 0;
-				l = i;
-			}
+			if (s[i] == accept[j] || accept[j] == '\0')
+				break;
 			j++;
 		}
+		if (s[i] == accept[j] || s[i] == '\0')
+			break;
 		i++;
 	}
-	if (n == 0)
-		return (s + l);
-	else if (accept[0] == '\0' && s[0] != '0')
+	if (s[i] == accept[j])
 		return (s + i);
-	else if (s[0] == accept[0])
-		return (s);
 	else
 		return (NULL);
 }
