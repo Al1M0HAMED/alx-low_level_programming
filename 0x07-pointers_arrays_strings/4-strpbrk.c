@@ -10,8 +10,14 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+	int i, j, l;
 
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	l = i;
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -28,6 +34,8 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (s[i] == accept[j])
 		return (s + i);
-	else
-		return ('\0');
+	else if (accept[0] == '\0')
+		return (s + l);
+	else 
+		return (NULL);
 }
