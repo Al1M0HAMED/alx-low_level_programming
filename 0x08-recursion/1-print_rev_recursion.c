@@ -11,9 +11,9 @@ void _print_rev_recursion(char *s)
 {
     if (i == 0 && n == 0)
     {
-        putchar(*s);
-        --s;
-        putchar(*s);
+        _putchar(*s);
+	--s;
+	_putchar(*s);
         return;
     }
     if (n)
@@ -29,10 +29,10 @@ void _print_rev_recursion(char *s)
             _print_rev_recursion(++s);
         }
     }
-    if (i != 0)
+    if (i != -1)
     {
         i--;
-        putchar(*s);
+        _putchar(*s);
         _print_rev_recursion(--s);
     }
 }
