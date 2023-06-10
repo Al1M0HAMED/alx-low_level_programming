@@ -1,74 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int multi_f(char *s);
-int char_2_int(char);
 /**
- * main - is the main.
+ * main - Prints the multiplication of two numbers, followed by a new line.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * @argc: int.
- *
- * @argv: string.
- *
- * Return: Always 0.
+ * Return: If the program receives two arguments - 0.
+ *         If the program does not receive two arguments - 1.
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int num1, num2, prod;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
-		return (0);
+		return (1);
 	}
 
-	i = multi_f(argv[1]) * multi_f(argv[2]);
-	printf("%d\n", i);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	prod = num1 * num2;
+
+	printf("%d\n", prod);
 
 	return (0);
-}
-/**
- * multi_f - no.
- *
- * @s: is string.
- *
- * Return: no.
- */
-int multi_f(char *s)
-{
-	int i = 0;
-	int result = 0;
-	int sign = 1;
-
-	if (s[0] == '-')
-	{
-		sign = -1;
-		i = 1;
-	}
-
-	while (s[i])
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + char_2_int(s[i]);
-		}
-		else
-		{
-			printf("Error\n");
-			exit(1);
-		}
-		i++;
-	}
-	return (sign * result);
-}
-/**
- * char_2_int - no.
- *
- * @c: is char.
- *
- * Return: no.
- */
-int char_2_int(char c)
-{
-	return (c - '0');
 }
