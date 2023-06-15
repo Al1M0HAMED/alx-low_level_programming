@@ -6,7 +6,7 @@
  *
  * @s2: parameter is pointer to char of array.
  *
- * Return: NULL on failure. 
+ * Return: NULL on failure.
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -15,18 +15,24 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
+	i = 0, size1 = 0, size2 = 0;
+	if (s1 != NULL)
 	{
-		i++;
+		while (s1[i] != '\0')
+		{
+			i++;
+		}
+		size1 = ((i + 1) * sizeof(char));
 	}
 	j = 0;
-	while (s2[j] != '\0')
+	if (s2 != NULL)
 	{
-		j++;
+		while (s2[j] != '\0')
+		{
+			j++;
+		}
+		size2 = ((j + 1) * sizeof(char));
 	}
-	size1 = ((i + 1) * sizeof(char));
-	size2 = ((j + 1) * sizeof(char));
 	size = size1 + size2;
 	if (size <= 0)
 		return (NULL);
