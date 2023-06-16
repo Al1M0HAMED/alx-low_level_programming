@@ -31,19 +31,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= s2_l)
 		n = s2_l;
 
-	p = malloc((n + s1_l + 1) * sizeof(char));
+	p = malloc((n + s1_l + 1) * sizeof(char *));
 
 	if (p == NULL)
 		return (NULL);
 
 	for (i = 0; s1[i] != '\0'; i++)
 		p[i] = s1[i];
-	for (j = 0; s2[j] != '\0'; j++, i++)
-	{
-		if (j < n)
-			p[i] = s2[j];
-	}
-
+	for (j = 0; j < n; i++)
+		p[j + i] = s2[j];
 	p[i] = '\0';
 
 	return (p);
