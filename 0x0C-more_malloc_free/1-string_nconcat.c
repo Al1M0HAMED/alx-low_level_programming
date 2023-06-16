@@ -1,4 +1,5 @@
 #include "main.h"
+int _strlen(char *s);
 /**
  * string_nconcat - ..
  *
@@ -37,4 +38,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	p[i + j] = '\0';
 
 	return (p);
+}
+/**
+ * _strlen - nothing.
+ *
+ * @s: nothing.
+ *
+ * Return: int.
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
