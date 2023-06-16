@@ -1,10 +1,12 @@
 #include "main.h"
 /**
+ * array_range - ..
  *
+ * @min: ..
  *
+ * @max: ..
  *
- *
- *
+ * Return: ..
  */
 int *array_range(int min, int max)
 {
@@ -19,13 +21,13 @@ int *array_range(int min, int max)
 	if (min != max)
 	{
 		i = 0;
-		while(i < ((max - min) + 1))
+		while (i < ((max - min) + 1))
 		{
 			p[i] = (min + i);
 			i++;
 		}
 	}
-	else 
+	else
 		p[0] = min;
 	return (p);
 }
