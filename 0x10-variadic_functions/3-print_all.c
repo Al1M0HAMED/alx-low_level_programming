@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 	i = 0;
-	while (format[i] != '\0' && format != NULL)
+	while (format && format[i] != '\0')
 	{
 		sp[i] = format[i];
 		switch (sp[i])
@@ -34,6 +34,8 @@ void print_all(const char * const format, ...)
 				break;
 			case 'c':
 				printf("%c", va_arg(list, int));
+				break;
+			default:
 				break;
 		}
 		if ((sp[i] == 'i' || sp[i] == 's' || sp[i] == 'f' || sp[i] == 'c')
