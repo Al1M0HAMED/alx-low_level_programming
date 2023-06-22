@@ -35,8 +35,6 @@ void print_all(const char * const format, ...)
 			case 'c':
 				printf("%c", va_arg(list, int));
 				break;
-			default:
-				break;
 		}
 		if ((sp[i] == 'i' || sp[i] == 's' || sp[i] == 'f' || sp[i] == 'c'
 					&& format[i + 1] != '\0')
