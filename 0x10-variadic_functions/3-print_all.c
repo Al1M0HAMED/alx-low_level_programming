@@ -6,7 +6,6 @@
 void print_all(const char * const format, ...)
 {
 	int i, start;
-	char sp[200];
 	va_list list;
 	char *str;
 
@@ -14,8 +13,7 @@ void print_all(const char * const format, ...)
 	i = 0, start = 0;
 	while (format && format[i] != '\0')
 	{
-		sp[i] = format[i];
-		switch (sp[i])
+		switch (format[i])
 		{
 			case 'i':
 				switch (start)
