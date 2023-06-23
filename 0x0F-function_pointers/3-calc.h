@@ -13,6 +13,7 @@ typedef struct op
 	int (*f)(int a, int b);
 } op_t;
 
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
