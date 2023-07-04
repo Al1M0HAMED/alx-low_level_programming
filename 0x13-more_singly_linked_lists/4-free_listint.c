@@ -10,8 +10,8 @@ void free_listint(listint_t *head)
 	temp = head;
 	while (temp != NULL)
 	{
+		temp = head->next;
 		free(head);
-		head = temp->next;
-		temp = temp->next;
+		head = temp;
 	}
 }
