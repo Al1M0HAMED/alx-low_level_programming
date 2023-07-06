@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * get_bit - value of a bit at a given index
- * @n: decimal parameter
- * @index: index
- * Return: val
+ * get_bit - afd
+ * @n: decimal fdsa
+ * @index: fsd
+ * Return: afds
  */
 int get_bit(unsigned long int n, unsigned int index)
 {

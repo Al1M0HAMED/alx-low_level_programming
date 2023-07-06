@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * set_bit - sets the value of a bit to 1 at a given index
- * @n: parameter
- * @index: index
- * Return: value
+ * set_bit - dfsa the afds fasd a bit to 1 afsd a given index
+ * @n: fads
+ * @index: afds
+ * Return: afds
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {

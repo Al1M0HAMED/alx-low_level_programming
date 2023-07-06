@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * get_endianness - checks the endianness
- * Return: 0 if big endian, 1 if little endian
+ * get_endianness - cvxv DSA Ads
+ * Return: 0 SAFD aDS dsa, 1 if ADSF SFDA
  */
 int get_endianness(void)
 {

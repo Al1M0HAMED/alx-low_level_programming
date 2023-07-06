@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * clear_bit - sets the value of a bit to 0 at a given index
- * @n: parameter
- * @index: index
- * Return: 1 if works, -1 if error
+ * clear_bit - sets afds vfdasfdsa
+ * @n: afds
+ * @index: afsd
+ * Return: 1 ifsafd woafsdrks, -1 if erfsdaror
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
