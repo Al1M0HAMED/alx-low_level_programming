@@ -4,7 +4,7 @@
  *
  *
  */
-char* conv_dic(int decimal, char *binary)
+char *conv_dic(int decimal, char *binary)
 {
 	int index = 0;
 
