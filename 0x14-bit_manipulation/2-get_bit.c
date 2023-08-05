@@ -10,7 +10,7 @@ int get_bit(unsigned long int decimal, unsigned int index)
 {
 	char binary[66];
 	unsigned int length;
-	int i;
+	int bit;
 
 	length = decimal_to_binary(binary, decimal);
 	rev_string(binary);
