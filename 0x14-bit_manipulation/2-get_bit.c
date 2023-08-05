@@ -25,12 +25,20 @@ int get_bit(unsigned long int decimal, unsigned int index)
  */
 unsigned int decimal_to_binary(char *binary, unsigned int decimal)
 {
-	float i = 1, j = 0;
 	unsigned int length = 0;
 
-	for (; i <= decimal; i *= 2, j++)
+	long double i = 1, j = 0;
+
+	if (!decimal)
+	{
+		printf("0");
+		return;
+	}
+	for ( ; i <= decimal; i *= 2, j++)
 		;
-	for (i *= 0.5; decimal || j; i *= 0.5, j--)
+	if (i > ULONG_MAX)
+		i *= 0.5;
+	for (i *= 0.5; j; i *= 0.5, j--, length++)
 	{
 		if (decimal >= i)
 		{
@@ -39,7 +47,6 @@ unsigned int decimal_to_binary(char *binary, unsigned int decimal)
 		}
 		else
 			binary[length] = '0';
-		length++;
 	}
 	binary[length] = '\0';
 	return (length - 1);
