@@ -25,14 +25,13 @@ int get_bit(unsigned long int decimal, unsigned int index)
  */
 unsigned int decimal_to_binary(char *binary, unsigned int decimal)
 {
-	unsigned int length = 0;
-
 	long double i = 1, j = 0;
+	unsigned int length = 0;
 
 	if (!decimal)
 	{
 		printf("0");
-		return;
+		return (0);
 	}
 	for ( ; i <= decimal; i *= 2, j++)
 		;
