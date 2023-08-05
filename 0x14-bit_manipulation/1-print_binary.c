@@ -5,7 +5,7 @@
  */
 void print_binary(unsigned long int decimal)
 {
-	float i = 1, j = 0;
+	long double i = 1, j = 0;
 
 	if (!decimal)
 	{
@@ -14,7 +14,9 @@ void print_binary(unsigned long int decimal)
 	}
 	for ( ; i <= decimal; i *= 2, j++)
 		;
-	for (i *= 0.5; decimal || j; i *= 0.5, j--)
+	if (i > ULONG_MAX)
+		i *= 0.5;
+	for (i *= 0.5; j; i *= 0.5, j--)
 	{
 		if (decimal >= i)
 		{
