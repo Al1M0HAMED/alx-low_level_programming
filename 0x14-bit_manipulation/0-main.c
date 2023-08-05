@@ -10,11 +10,11 @@ int main(void)
 {
     unsigned int n;
 
-    n = binary_to_uint("1");
+    n = binary_to_uint("10");
     printf("%u\n", n);
-    n = binary_to_uint("101");
+    n = binary_to_uint("01");
     printf("%u\n", n);
-    n = binary_to_uint("1e01");
+    n = binary_to_uint("0");
     printf("%u\n", n);
     n = binary_to_uint("11111111111111111111111111111111");
     printf("%u\n", n);
@@ -22,3 +22,4 @@ int main(void)
     printf("%u\n", n);
     return (0);
 }
+
