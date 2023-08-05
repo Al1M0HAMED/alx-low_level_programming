@@ -6,56 +6,24 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 0, unit = 0, j = 0;
-	char binary[256];
+	unsigned int i = 1, unit = 0, j = 0;
 
 	if (b != NULL)
 	{
-		while (b[i] != '\0')
+		while (b[j] != '\0')
 		{
-			if (b[i] != '0' && b[i] != '1')
+			if (b[j] != '0' && b[j] != '1')
 				return (0);
-			binary[i] = b[i];
-			i++;
+			j++, i = i * 2;
 		}
-		binary[i] = '\0';
-		rev_string(binary);
-		i = 1;
-		while (binary[j] != '\0')
+		i = i / 2, j = 0;
+		while (b[j] != '\0')
 		{
-			if (binary[j] == '1')
+			if (b[j] == '1')
 				unit += i;
-			i = i * 2, j++;
+			i = i / 2, j++;
 		}
 		return (unit);
 	}
 	return (0);
-}
-/**
- * rev_string - this function reverse a string.
- *
- * @s: is a char pointer.
- *
- * Return: nothing.
- */
-void rev_string(char *s)
-{
-	int i, j, n, temp0, temp1;
-
-	i = 0;
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	i--;
-	j = i + 1;
-	for (n = 0; n < j / 2; n++)
-	{
-		temp0 = *(s + n);
-		temp1 = *(s + i);
-		*(s + n) = temp1;
-		*(s + i) = temp0;
-		i--;
-	}
-
 }
