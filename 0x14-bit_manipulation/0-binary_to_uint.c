@@ -6,8 +6,8 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 1, unit = 0, j = 0;
-
+	long int i = 1, j = 0;
+	unsigned int unit = 0;
 	if (b != NULL)
 	{
 		while (b[j] != '\0')
