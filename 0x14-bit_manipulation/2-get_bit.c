@@ -8,14 +8,16 @@
  */
 int get_bit(unsigned long int decimal, unsigned int index)
 {
-	char binary[256];
+	char binary[66];
 	unsigned int length;
+	int i;
 
 	length = decimal_to_binary(binary, decimal);
 	rev_string(binary);
 	if (index > length)
 		return (-1);
-	return (binary[index] - '0');
+	bit = binary[index] - '0';
+	return (bit);
 }
 /**
  * decimal_to_binary - this function coverts decimal to binary.
