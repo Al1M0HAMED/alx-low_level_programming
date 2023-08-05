@@ -6,17 +6,17 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	long int i = 1, j = 0;
+	long int i = 1, j;
 	unsigned int unit = 0;
 
 	if (b != NULL)
 	{
-		for (; b[j] != '\0'; j++)
+		for (j = 0; b[j] != '\0'; j++)
 		{
 			if (b[j] != '0' && b[j] != '1')
 				return (0);
 		}
-		for (i = 1, j = j - 1; b[j] != '\0'; j--, i = i * 2)
+		for (--j; b[j]; j--, i *= 2)
 		{
 			if (b[j] == '1')
 				unit += i;
