@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <limits.h>
 #include <stdio.h>
 
 unsigned int decimal_to_binary(char *binary, unsigned int decimal);
