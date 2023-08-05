@@ -25,7 +25,7 @@ int get_bit(unsigned long int decimal, unsigned int index)
  * @binary: is the binary string.
  * Return: length.
  */
-unsigned int decimal_to_binary(char *binary, unsigned int decimal)
+unsigned int decimal_to_binary(char *binary, unsigned long int decimal)
 {
 	long double i = 1, j = 0;
 	unsigned int length = 0;

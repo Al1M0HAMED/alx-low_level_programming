@@ -4,7 +4,7 @@
 #include <limits.h>
 #include <stdio.h>
 
-unsigned int decimal_to_binary(char *binary, unsigned int decimal);
+unsigned int decimal_to_binary(char *binary, unsigned long int decimal);
 void rev_string(char *s);
 char *conv_dic(int decimal, char *binary);
 unsigned int binary_to_uint(const char *b);
