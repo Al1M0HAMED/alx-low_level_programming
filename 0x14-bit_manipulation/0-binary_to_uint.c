@@ -19,6 +19,8 @@ unsigned int binary_to_uint(const char *binary)
 			i = i + 1;
 		}
 		i = i - 1;
+		if (i > 64)
+			return (0);
 		while (binary[i] != '\0')
 		{
 			if (binary[i] == '1')
