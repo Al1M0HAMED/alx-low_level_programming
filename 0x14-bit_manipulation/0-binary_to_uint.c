@@ -12,7 +12,7 @@ unsigned int binary_to_uint(const char *binary)
 	while (*binary != '\0')
 		binary++;
 	binary--;
-	while (*binary)
+	while (*binary && power < 64)
 	{
 		if (*binary < '0' || *binary > '1')
 			return (0);
