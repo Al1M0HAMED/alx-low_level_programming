@@ -6,13 +6,15 @@
  */
 unsigned int binary_to_uint(const char *binary)
 {
+	const char *b = binary;
 	int power = 0;
 	unsigned int bit, unit = 0;
 
 	while (*binary != '\0')
 		binary++;
 	binary--;
-	while (*binary && power < 64)
+
+	while (binary >= b)
 	{
 		if (*binary < '0' || *binary > '1')
 			return (0);
