@@ -1,25 +1,30 @@
 #include "main.h"
 /**
- * binary_to_uint - this function turn binary to decimal.
- * @b: is pointer to a char arr.
- * Return: unsigned decimal transformed or 0 if faild.
+ * binary_to_uint - this function converts binary to unsigned int.
+ * @binary: is the binary string.
+ * Return: the unsigned decimal if converted or 0 if faild.
  */
-unsigned int binary_to_uint(const char *b)
+unsigned int binary_to_uint(const char *binary)
 {
-	long int i = 1, j;
-	unsigned int unit = 0;
+	long int bit = 1;
+	unsigned int i, unit = 0;
 
-	if (b != NULL)
+	if (binary != NULL)
 	{
-		for (j = 0; b[j] != '\0'; j++)
+		i = 0;
+		while (binary[i] != '\0')
 		{
-			if (b[j] != '0' && b[j] != '1')
+			if (binary[i] != '0' && binary[i] != '1')
 				return (0);
+			i = i + 1;
 		}
-		for (--j; b[j]; j--, i *= 2)
+		i = i - 1;
+		while (binary[i] != '\0')
 		{
-			if (b[j] == '1')
-				unit += i;
+			if (binary[i] == '1')
+				unit = unit + bit;
+			bit = bit * 2;
+			i = i - 1;
 		}
 		return (unit);
 	}

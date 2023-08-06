@@ -1,29 +1,31 @@
 #include "main.h"
 /**
- * print_binary - this function coverts decimal to binary.
- * @decimal: is the decimal number.
+ * print_binary - this function converts decimal to binary and then prints it.
+ * @decimal: is the decimal value.
  */
 void print_binary(unsigned long int decimal)
 {
-	long double i = 1, j = 0;
+	long double bit = 1;
+	int i = 0;
 
-	if (!decimal)
+	if (decimal == 0)
+		putchar('0');
+	while (bit <= decimal)
 	{
-		printf("0");
-		return;
+		bit = bit * 2;
+		i = i + 1;
 	}
-	for ( ; i <= decimal; i *= 2, j++)
-		;
-	if (i > ULONG_MAX)
-		i *= 0.5;
-	for (i *= 0.5; j; i *= 0.5, j--)
+	bit = bit * 0.5;
+	while (i > 0)
 	{
-		if (decimal >= i)
+		if (bit <= decimal)
 		{
-			printf("1");
-			decimal -= i;
+			decimal = decimal - bit;
+			putchar('1');
 		}
 		else
-			printf("0");
+			putchar('0');
+		bit = bit * 0.5;
+		i = i - 1;
 	}
 }
