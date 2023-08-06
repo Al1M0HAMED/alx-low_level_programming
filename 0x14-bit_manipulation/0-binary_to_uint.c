@@ -6,29 +6,17 @@
  */
 unsigned int binary_to_uint(const char *binary)
 {
-	long int bit = 1;
-	unsigned int i, unit = 0;
+	int i, power = 0;
+	unsigned int unit = 0;
 
-	if (binary != NULL)
+	while (*binary != '\0')
+		binary++, i++;
+	--binary;
+	while (i > 0 && i <= 33)
 	{
-		i = 0;
-		while (binary[i] != '\0')
-		{
-			if (binary[i] != '0' && binary[i] != '1')
-				return (0);
-			i = i + 1;
-		}
-		i = i - 1;
-		if (i > 64)
-			return (0);
-		while (binary[i] != '\0')
-		{
-			if (binary[i] == '1')
-				unit = unit + bit;
-			bit = bit * 2;
-			i = i - 1;
-		}
-		return (unit);
+		if (*binary == '1')
+			unit = unit + (1 << power);
+		power++, i--;
 	}
-	return (0);
+	return (unit);
 }
