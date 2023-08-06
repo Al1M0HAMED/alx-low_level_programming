@@ -10,17 +10,20 @@ unsigned int binary_to_uint(const char *binary)
 	int power = 0;
 	unsigned int bit, unit = 0;
 
-	while (*binary != '\0')
-		binary++;
-	binary--;
-
-	while (binary >= b)
+	if (binary != NULL)
 	{
-		if (*binary < '0' || *binary > '1')
-			return (0);
-		bit = (*binary - '0') * (1 << power);
-		unit = unit + bit;
-		power++, binary--;
+		while (*binary != '\0')
+			binary++;
+		binary--;
+
+		while (binary >= b)
+		{
+			if (*binary < '0' || *binary > '1')
+				return (0);
+			bit = (*binary - '0') * (1 << power);
+			unit = unit + bit;
+			power++, binary--;
+		}
 	}
 	return (unit);
 }
