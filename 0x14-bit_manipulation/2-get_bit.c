@@ -1,23 +1,21 @@
 #include "main.h"
 /**
- * get_bit - this function convert a unit to binary and then return a digit
- * value at a specific index.
- * @decimal: is unsigned int.
- * @index: is unsigned int.
- * Return: the digit value or -1 if faild.
+ * get_bit - this function gets the value of specific bit.
+ * @n: is the unit.
+ * @index: is the specific index.
+ * Return: the bit or -1 if faild.
  */
-int get_bit(unsigned long int decimal, unsigned int index)
+int get_bit(unsigned long int n, unsigned int index)
 {
 	char binary[66];
-	unsigned int length;
-	int bit;
+	unsigned long int bit;
+	unsigned int l;
 
-	length = decimal_to_binary(binary, decimal);
-	rev_string(binary);
-	if (index > length)
+	l = decimal_to_binary(binary, n);
+	if (index > l || index > 64)
 		return (-1);
-	bit = binary[index] - '0';
-	return (bit);
+	bit = n >> index;
+	return (bit & 1);
 }
 /**
  * decimal_to_binary - this function coverts decimal to binary.
@@ -32,8 +30,8 @@ unsigned int decimal_to_binary(char *binary, unsigned long int decimal)
 
 	if (!decimal)
 	{
-		printf("0");
-		return (0);
+		binary[0] = '0';
+		return (1);
 	}
 	for ( ; i <= decimal; i *= 2, j++)
 		;
@@ -51,32 +49,4 @@ unsigned int decimal_to_binary(char *binary, unsigned long int decimal)
 	}
 	binary[length] = '\0';
 	return (length - 1);
-}
-/**
- * rev_string - this function reverse a string.
- *
- * @s: is a char pointer.
- *
- * Return: nothing.
- */
-void rev_string(char *s)
-{
-	int i, j, n, temp0, temp1;
-
-	i = 0;
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	i--;
-	j = i + 1;
-	for (n = 0; n < j / 2; n++)
-	{
-		temp0 = *(s + n);
-		temp1 = *(s + i);
-		*(s + n) = temp1;
-		*(s + i) = temp0;
-		i--;
-	}
-
 }
