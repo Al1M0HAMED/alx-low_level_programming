@@ -11,11 +11,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t number_of_bytes_read, number_of_bytes_written;
 	char *buff;
 
+	if (filename == NULL)
+		return (0);
 	fd = open(filename, O_RDONLY);
-	buff = malloc(sizeof(char) * letters + 1);
+	if (fd < 0)
+		return (0);
+
+	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
+		return (0);
 	number_of_bytes_read = read(fd, buff, letters);
-	if (number_of_bytes_read == -1 || buff == NULL || filename == NULL
-			|| letters == 0 || fd < 0)
+	if (number_of_bytes_read < 0)
 	{
 		free(buff);
 		return (0);
