@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- *
- *
- *
- *
+ * read_textfile - this function reads a text file and prints it to the
+ * POSIX standard output.
+ * @filename: is a null terminated string.
+ * @letters: is the number of letters need to be written.
+ * Return: number of bytes printed or 0 if failed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -27,8 +28,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buff[number_of_bytes_read] = '\0';
-	close(fd);	
-	number_of_bytes_written = write(STDOUT_FILENO, buff, 
+	close(fd);
+	number_of_bytes_written = write(STDOUT_FILENO, buff,
 			number_of_bytes_read);
 	if (number_of_bytes_written != number_of_bytes_read)
 	{
