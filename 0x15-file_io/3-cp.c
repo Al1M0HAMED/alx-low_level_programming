@@ -38,14 +38,14 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	m = close(fd_r);
-	n = close(fd_w);
+	m = close(fd_from);
+	n = close(fd_to);
 	if (m < 0 || n < 0)
 	{
 		if (m < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_f);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		if (n < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_t);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (0);
