@@ -7,7 +7,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, index;
+	int fd, index = 0;
 	ssize_t number_of_bytes_written;
 
 	if (filename == NULL)
@@ -20,7 +20,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[index] != '\0')
 			index++;
 		number_of_bytes_written = write(fd, text_content, index);
-		if (number_of_bytes_written < index)
+		if (number_of_bytes_written != index)
 			return (-1);
 	}
 	close(fd);
