@@ -12,7 +12,7 @@
 
 ## About
 
-- This repository consists of all the C programming projects and problem solving done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [th3\_gr00t](https://th3-gr00t.tk/).
+- This repository consists of all the C programming projects and problem solving done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Ali Mohamed](https://www.facebook.com/profile.php?id=100053370433155).
 - All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
 
 ## Resource
