@@ -1,6 +1,6 @@
 ![img](https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png)
 
-# C is FUN 😊
+## CisFUN
 
 <p align="center">
   <h1><em>Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers</em></h1>
