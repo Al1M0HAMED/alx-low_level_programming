@@ -3,7 +3,7 @@
 # C is FUN 😊
 
 <p align="center">
-  <h1><em>""Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers</em></h1>
+  <h1><em>"Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers"</em></h1>
 </p>
 
 <p align="center">
