@@ -9,35 +9,32 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_node, *temp = *head;
-	size_t len, i = 0;
+	size_t len, i = 1;
 
 	new_node = malloc(sizeof(listint_t));
-	if (new_node == NULL)
+	if (!new_node)
 		return (NULL);
 	new_node->n = n;
 
-	if (idx == 0)
+	if (!idx)
 	{
+		new_node->next = (*head)->next;
 		*head = new_node;
-		new_node->next = NULL;
 		return (new_node);
 	}
 
 	len = listint_len(temp);
-	temp = *head;
-	if (len >= idx)
+	if (idx > len)
+		return (NULL);
+
+	while (i < idx)
 	{
-		idx -= 1;
-		while (i < idx)
-		{
-			temp = temp->next;
-			i++;
-		}
-		new_node->next = temp->next;
-		temp->next = new_node;
-		return (new_node);
+		temp = temp->next, i++;
 	}
-	return (NULL);
+	new_node->next = temp->next;
+	temp->next = new_node;
+
+	return (new_node);
 }
 /**
  * listint_len - this function returns the number of elements in a linked.
