@@ -11,13 +11,17 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 	size_t index = idx;
 	dlistint_t *head = *h, *temp = *h;
 
-	if (index >= dlistint_len(*h))
+	if (!*h)
 	{
 		return (-1);
 	}
 	if (!index && *h)
 	{
 		temp = (*h)->next;
+		if (temp)
+		{
+			temp->prev = NULL;
+		}
 		free(head);
 		*h = temp;
 		return (1);
@@ -30,7 +34,7 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 	if (!index && head)
 	{
 		temp = head->next;
-		head->prev->next = head->next;
+		head->prev->next = temp;
 		if (temp)
 		{
 			temp->prev = head->prev;
@@ -40,17 +44,4 @@ int delete_dnodeint_at_index(dlistint_t **h, unsigned int idx)
 		return (1);
 	}
 	return (-1);
-}
-/**
- * dlistint_len - this program prints all the elements of dlistint_t list.
- * @h: is the head of the linked list
- * Return: the length of the linked list.
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t length = 0;
-
-	while (h)
-		h = h->next, length++;
-	return (length);
 }
