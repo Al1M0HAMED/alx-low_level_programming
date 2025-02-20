@@ -1,25 +1,22 @@
 #include "main.h"
+
 /**
- * _memcpy - this function unction copies n bytes from memory area src to
- * memory area dest.
+ *_memcpy - copies bytes from memory area src to memory area dest
+ *@dest: destination area memory
+ *@src: source memory area
+ *@n: data
  *
- * @dest: this parameter is the destination array.
- *
- * @src: this parameter is the source array.
- *
- * @n: parameter is unsigned int.
- *
- * Return: Always the destenation.
+ *Return: dest
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+unsigned int i;
+i = 0;
 
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
+while (i < n)
+{
+dest[i] = src[i];
+i++;
+}
 }

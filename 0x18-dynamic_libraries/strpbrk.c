@@ -1,28 +1,25 @@
 #include "main.h"
+
+#include <stdlib.h>
+
 /**
- * _strpbrk - this function is an implementation of strpbrk function.
+ *_strpbrk - locate the first occurence in the string
+ *@s: string
+ *@accept: string
  *
- * @s: parameter is array of char.
- *
- * @accept: parameter is array of char.
- *
- * Return: Always pointer to the byte s.
+ *Return: NULL
  */
+
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+int i = 0;
+int j = 0;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		j = 0;
-		while (accept[j] != '\0')
-		{
-			if (s[i] == accept[j])
-				return (s + i);
-			j++;
-		}
-		i++;
-	}
-	return (NULL);
+for (i = 0; s[i]; i++)
+{
+for (j = 0; accept[j]; j++)
+if (*(accept + j) == s[i])
+return (&(s[i]));
+}
+return (NULL);
 }

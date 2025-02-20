@@ -1,30 +1,28 @@
 #include "main.h"
+
 /**
- * _strncat - this function concatonate a strign also but with a certen number.
+ *_strncat - concatenate strings
+ *@dest: destination
+ *@src: source
+ *@n: integer
  *
- * @dest: parameter is string.
- *
- * @src: parameter is string.
- *
- * @n: parameter is int.
- *
- * Return: dest the string after the other string added to.
+ *Return: destination
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+int j = 0;
+int i = 0;
 
-	i = 0;
-	while (*(dest + i) != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (*(src + j) != '\0' && j < n)
-	{
-		*(dest + (i + j)) = *(src + j);
-		j++;
-	}
-	*(dest + (i + n)) = '\0';
-	return (dest);
+while (dest[i] != '\0')
+{
+i++;
+}
+
+for (j = 0; j < n && src[j] != '\0'; j++)
+
+dest[j + 1] = src[i];
+dest[j + i + 1] = '\0';
+
+return (dest);
 }

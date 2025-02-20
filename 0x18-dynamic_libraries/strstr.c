@@ -1,34 +1,42 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
- * _strstr - this function is an implemintation of strstr function.
+ *_strstr - find the first occurence
+ *@haystack: string
+ *@needle: string
  *
- * @haystack: is a char to array.
- *
- * @needle: is a char to array.
- *
- * Return: pointer to the beginning of the located substring, or NULL if the
- * substring is not found.
+ *Return: the pointer to the first occurence
  */
+#include <stdio.h>
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, n;
 
-	i = 0;
-	while (haystack[i] != '\0')
+	int i = 0;
+	int j = 0;
+	int k, s;
+
+	for (s = 0; needle[s]; s++)
+	;
+	if (s == 0)
+	return (haystack);
+	while (haystack[i])
 	{
-		j = 0, n = 0;
-		while (needle[j] != '\0')
+		if (haystack[i] == needle[j])
 		{
-			if (haystack[i + j] == needle[j])
-				n++;
+			i++;
 			j++;
+			for (k = i; haystack[k]; k++)
+			{
+				if (needle[j] == '\0')
+					return (&(haystack[i - 1]));
+				if (haystack[k] != needle[j])
+					break;
+				j++;
+			}
 		}
-		if (n == j && j != 0 && n != 0)
-			return (haystack + i);
 		i++;
+		j = 0;
 	}
-	if (needle[0] == '\0')
-		return (haystack);
-	else
-		return (NULL);
+	return (NULL);
 }
